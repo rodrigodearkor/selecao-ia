@@ -1,0 +1,11 @@
+
+spring:
+  datasource:
+    url: jdbc:h2:file:./selecao
+  redis:
+    host: localhost
+
+# logging:
+#   level:
+#     org.springframework.web: info, error
+#     org.hibernate: info, error

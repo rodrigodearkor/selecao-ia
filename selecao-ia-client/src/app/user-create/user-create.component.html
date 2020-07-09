@@ -1,0 +1,66 @@
+<mat-card class="center">
+<mat-card-content>
+<form #formRef="ngForm" [formGroup]="form" (ngSubmit)="onSubmit(formRef)">
+  <h2>Novo Usuário</h2>
+  <mat-error *ngIf="loginInvalid">
+    {{error}}
+  </mat-error>
+  <mat-form-field class="full-width-input">
+    <input
+      matInput
+      placeholder="Nome"
+      formControlName="name"
+      required
+    />
+    <mat-error>
+      Digite o nome
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="full-width-input">
+    <input
+      matInput
+      placeholder="E-mail"
+      formControlName="email"
+      required
+    />
+    <mat-error>
+      Digite um endereço de e-mail válido
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="full-width-input">
+    <input
+      matInput
+      placeholder="Login"
+      formControlName="login"
+      required
+    />
+    <mat-error>
+      Digite o login
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="full-width-input">
+    <input
+      matInput
+      type="password"
+      placeholder="Password"
+      formControlName="password"
+      required
+    />
+    <mat-error>
+        Digite a senha
+    </mat-error>
+  </mat-form-field>
+  
+  <div class="mat-form-field" style="float: left;"> 
+    <mat-checkbox formControlName="admin">Admin?</mat-checkbox>
+  </div>
+  
+  <button mat-raised-button color="primary" [disabled]="loading">
+    <mat-icon *ngIf="loading">
+        <mat-spinner color="accent" diameter="20"></mat-spinner>
+    </mat-icon>
+    Cadastrar
+ </button>
+</form>
+</mat-card-content>
+</mat-card>

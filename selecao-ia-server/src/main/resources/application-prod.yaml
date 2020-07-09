@@ -1,0 +1,10 @@
+
+##
+spring:
+  datasource:
+    url: #
+    host: #
+
+logging:
+  level:
+    ROOT: error

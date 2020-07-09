@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" class="expanded-toolbar" *ngIf="isAuthenticated">
+  <span>
+    <button mat-button routerLink="/">{{title}}</button>
+    <button mat-button routerLink="/user/new">
+      <mat-icon>add</mat-icon>
+      Add User
+    </button>
+  </span>
+  <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+    <button mat-stroked-button style="border: none;" >{{user.name}}</button>
+    <button mat-button (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      Logout
+    </button>
+  </div>
+</mat-toolbar>
+<div class="main-div">
+  <div class="center">
+      <router-outlet></router-outlet>
+  </div>
+</div>    

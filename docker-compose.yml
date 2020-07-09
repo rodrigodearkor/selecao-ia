@@ -1,0 +1,38 @@
+version: '3.7'
+
+services:
+  app-server:
+    build:
+      context: selecao-ia-server
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    restart: always
+    depends_on: 
+      - cache
+    environment:
+      - "SPRING_PROFILES_ACTIVE=dev"
+      - "SPRING_REDIS_HOST=redis"
+    links: 
+      - "cache:redis"
+
+  app-client:
+    build:
+      context: selecao-ia-client
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    restart: always
+    volumes: 
+      - ./selecao-ia-client:/app
+      - /app/node_modules
+    depends_on:
+      - app-server
+
+  # Cache
+  cache:
+    image: redis
+    hostname: redis
+    ports:
+      - "6379:6379"
+    restart: always
