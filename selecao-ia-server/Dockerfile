@@ -14,4 +14,4 @@ COPY src src
 
 # COPY . .
 
-CMD [ "boot", "-jar", "build/libs/selecao-ia-server-0.0.1-SNAPSHOT.jar" ]
+CMD [ "java", "-jar", "build/libs/selecao-ia-server-0.0.1-SNAPSHOT.jar" ]
