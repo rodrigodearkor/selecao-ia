@@ -1,9 +1,13 @@
 # Seleção IA
 
 ```
-./gradlew clean build
 
-docker-compose build
+cd selecao-ia-server
 
-docker-compose up
+sh gradlew clean build
+
+cd ..
+
+docker-compose up --build
+
 ```
