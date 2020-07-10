@@ -10,7 +10,7 @@ cd ..
 
 docker-compose up --build
 
-Go to [localhost:4200](http://localhost:4200)
+[Goto](http://localhost:4200)
 
 
 ```
